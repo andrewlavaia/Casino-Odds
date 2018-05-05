@@ -1,6 +1,13 @@
 #include "pch.h"
 
-TEST(TestCaseName, TestName) {
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
+#include "../casino/outcome.h"
+
+TEST(OutcomeTests, Equality) {
+	Outcome a("a", 8);
+	Outcome b("b", 7);
+	Outcome c("a", 8);
+
+	EXPECT_EQ(a, c);
+	EXPECT_EQ(a, a);
+	EXPECT_NE(a, b);
 }
