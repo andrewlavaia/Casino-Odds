@@ -22,10 +22,12 @@
     <ClCompile Include="bin.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="outcome.cpp" />
+    <ClCompile Include="wheel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bin.h" />
     <ClInclude Include="outcome.h" />
+    <ClInclude Include="wheel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

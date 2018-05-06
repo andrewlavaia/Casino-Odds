@@ -24,12 +24,18 @@
     <ClCompile Include="bin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="wheel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="outcome.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wheel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,6 +12,8 @@ class Bin {
 public:
 	Bin(std::unordered_set<Outcome> outcomes);
 
+	void addOutcome(Outcome outcome);
+
 private:
 	std::unordered_set<Outcome> outcomes;
 };
