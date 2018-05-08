@@ -10,17 +10,16 @@
 
 class Wheel {
 public:
+
+	Wheel(std::array<Bin, 38> bins);
 	Bin getBin(int i) const;
-	Bin getRandomBin() const;
+	Bin getRandomBin();
 
 
 private:
 	std::array<Bin, 38> bins;
-
+	std::mt19937 rng;
 };
-
-
-
 
 
 #endif
