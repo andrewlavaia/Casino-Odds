@@ -1,7 +1,7 @@
 #include "wheel.h"
 
-Wheel::Wheel(std::array<Bin, 38> bins)
-	: bins(bins), rng(std::random_device()()) {
+Wheel::Wheel(std::array<Bin, 38> bins, unsigned seed)
+	: bins(bins), rng(seed) {
 
 }
 

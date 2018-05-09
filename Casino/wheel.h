@@ -11,10 +11,9 @@
 class Wheel {
 public:
 
-	Wheel(std::array<Bin, 38> bins);
+	Wheel(std::array<Bin, 38> bins, unsigned seed = std::random_device()());
 	Bin getBin(int i) const;
 	Bin getRandomBin();
-
 
 private:
 	std::array<Bin, 38> bins;
