@@ -3,6 +3,9 @@
 #include <cassert>
 
 #include "outcome.h"
+#include "bin.h"
+#include "wheel.h"
+#include "binbuilder.h"
 
 int main() {
 
@@ -11,7 +14,8 @@ int main() {
 	while (n != 0) {
 		
 
-
+		Wheel wheel;
+		BinBuilder::generateStraightBets(wheel);
 		
 		
 		std::cin >> n;

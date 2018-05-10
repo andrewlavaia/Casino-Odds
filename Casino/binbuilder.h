@@ -11,17 +11,16 @@
 
 class BinBuilder {
 public:
-	BinBuilder(Wheel& wheel);
-	void buildBins();
+	static void generateStraightBets(Wheel& wheel);
+	void generateSplitBets(Wheel& wheel);
+	void generateCornerBets(Wheel& wheel);
+	void generateRowBets(Wheel& wheel);
+	void generateColumnBets(Wheel& wheel);
+	void generateLowMidHiBets(Wheel& wheel);
+	void generateEvenMoneyBets(Wheel& wheel);
 
 private: 
-	void generateStraightBets();
-	void generateSplitBets();
-	void generateCornerBets();
-	void generateRowBets();
-	void generateColumnBets();
-	void generateLowMidHiBets();
-	void generateEvenMoneyBets();
+
 };
 
 

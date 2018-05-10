@@ -13,3 +13,21 @@ TEST(BinTests, CheckCount) {
 	bin.addOutcome(b);
 	EXPECT_EQ(bin.getCount(), 2);
 }
+
+TEST(BinTests, OutcomeInBin) {
+	Outcome a("a", 8);
+	Outcome b("b", 7);
+	Outcome c("c", 9);
+	Outcome d("a", 9);
+
+	Bin bin;
+	bin.addOutcome(a);
+	bin.addOutcome(b);
+
+	EXPECT_EQ(bin.outcomeInBin(a), true);
+	EXPECT_EQ(bin.outcomeInBin(b), true);
+	EXPECT_EQ(bin.outcomeInBin(c), false);
+	EXPECT_EXIT(bin.addOutcome(d), ::testing::ExitedWithCode(-1), 
+		"Error: outcome with name=a already exists in Bin");
+	EXPECT_EQ(bin.getCount(), 2);
+}

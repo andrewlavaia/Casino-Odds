@@ -2,6 +2,8 @@
 #define BIN_H
 
 #include <unordered_set>
+#include <algorithm>
+#include <iostream>
 
 #include "outcome.h"
 
@@ -11,6 +13,7 @@
 class Bin {
 public:
 	Bin(std::unordered_set<Outcome> outcomes = {});
+	bool outcomeInBin(Outcome outcome) const;
 	void addOutcome(Outcome outcome);
 	unsigned getCount() const;
 

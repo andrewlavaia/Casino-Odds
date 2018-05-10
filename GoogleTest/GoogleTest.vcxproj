@@ -37,12 +37,16 @@
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="..\Casino\bin.h" />
+    <ClInclude Include="..\Casino\binbuilder.h" />
     <ClInclude Include="..\Casino\outcome.h" />
     <ClInclude Include="..\Casino\wheel.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Casino\bin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Casino\binbuilder.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\Casino\outcome.cpp">

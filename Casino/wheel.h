@@ -12,12 +12,13 @@
 class Wheel {
 public:
 	Wheel(unsigned seed = std::random_device()());
-	Bin& getBin(int i);
-	Bin spin();										// returns winning bin
+	void addOutcome(int i, Outcome outcome);
+	Bin getBin(int i) const;
+	Bin spin() const; 
 
 private:
 	std::array<Bin, 38> bins;
-	std::mt19937 rng;
+	mutable std::mt19937 rng;
 };
 
 

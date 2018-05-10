@@ -10,11 +10,14 @@ public:
 	bool operator==(const Outcome &rhs) const;
 	bool operator!=(const Outcome &rhs) const;
 
-	std::string oddsToString() const;
 	double winAmount(double dollars) const;
-
+	
+	// getters
 	std::string getName() const;
 	double getOdds() const;
+
+	// output helpers
+	std::string oddsToString() const;
 
 private:
 	std::string name;
