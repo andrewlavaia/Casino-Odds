@@ -1,15 +1,13 @@
 #include "bin.h"
 
 Bin::Bin(std::unordered_set<Outcome> outcomes)
-	: outcomes(outcomes), count(outcomes.size()) {
-
+	: outcomes(outcomes) {
 }
 
 void Bin::addOutcome(Outcome outcome) {
 	outcomes.insert(outcome);
-	++count;
 }
 
-unsigned Bin::getCount() {
-	return count;
+unsigned Bin::getCount() const {
+	return outcomes.size();
 }

@@ -1,6 +1,7 @@
 #ifndef WHEEL_H
 #define WHEEL_H
 
+#include <iostream>
 #include <array>
 #include <random>
 #include <cassert>
@@ -10,10 +11,9 @@
 
 class Wheel {
 public:
-
-	Wheel(std::array<Bin, 38> bins, unsigned seed = std::random_device()());
-	Bin getBin(int i) const;
-	Bin getRandomBin();
+	Wheel(unsigned seed = std::random_device()());
+	Bin& getBin(int i);
+	Bin spin();										// returns winning bin
 
 private:
 	std::array<Bin, 38> bins;

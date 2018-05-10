@@ -27,6 +27,9 @@
     <ClCompile Include="wheel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="binbuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="outcome.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="wheel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="binbuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

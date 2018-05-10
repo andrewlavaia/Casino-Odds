@@ -20,6 +20,7 @@ private:
 	void generateCornerBets();
 	void generateRowBets();
 	void generateColumnBets();
+	void generateLowMidHiBets();
 	void generateEvenMoneyBets();
 };
 

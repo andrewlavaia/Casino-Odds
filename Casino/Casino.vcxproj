@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bin.cpp" />
+    <ClCompile Include="binbuilder.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="outcome.cpp" />
     <ClCompile Include="wheel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bin.h" />
+    <ClInclude Include="binbuilder.h" />
     <ClInclude Include="outcome.h" />
     <ClInclude Include="wheel.h" />
   </ItemGroup>

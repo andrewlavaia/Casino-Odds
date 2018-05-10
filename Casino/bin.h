@@ -12,11 +12,10 @@ class Bin {
 public:
 	Bin(std::unordered_set<Outcome> outcomes = {});
 	void addOutcome(Outcome outcome);
-	unsigned getCount();
+	unsigned getCount() const;
 
 private:
 	std::unordered_set<Outcome> outcomes;
-	unsigned count;
 };
 
 #endif

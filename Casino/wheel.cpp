@@ -1,16 +1,19 @@
 #include "wheel.h"
 
-Wheel::Wheel(std::array<Bin, 38> bins, unsigned seed)
-	: bins(bins), rng(seed) {
+Wheel::Wheel(unsigned seed)
+	: rng(seed), bins(std::array<Bin, 38>()) {
 
 }
 
-Bin Wheel::getBin(int i) const {
-	assert(i >= 0 && i < 38);
+Bin& Wheel::getBin(int i) {
+	if (i < 0 || i > 37) {
+		std::cerr << "Error: out of range";
+		exit(-1);
+	}
 	return bins[i];
 }
 
-Bin Wheel::getRandomBin() {
+Bin Wheel::spin() {
 	std::uniform_int_distribution<std::mt19937::result_type> dist(0, 37); // distribution in range [0, 37]
 	return bins[dist(rng)];
 }
