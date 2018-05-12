@@ -55,14 +55,22 @@ void BinBuilder::generateSplitBets(Wheel& wheel) {
 	wheel.addOutcome(37, outcome);
 }
 
-// covers 4 contiguous numbers
+// covers 4 contiguous numbers (1-2-4-5)
 void BinBuilder::generateCornerBets(Wheel& wheel) {
 
 }
 
 // covers three numbers in a row
 void BinBuilder::generateStreetBets(Wheel& wheel) {
-
+	for (int r = 0; r < 12; ++r) {
+		int x = (r * 3) + 1;
+		Outcome outcome("Street " + std::to_string(x) +
+			"-" + std::to_string(x + 1) + "-" +
+			std::to_string(x + 2), STREET_BET);
+		wheel.addOutcome(x, outcome);
+		wheel.addOutcome(x + 1, outcome);
+		wheel.addOutcome(x + 2, outcome);
+	}
 }
 
 // covers all 12 numbers in a column (excludes 0 and 00)
@@ -72,7 +80,14 @@ void BinBuilder::generateColumnBets(Wheel& wheel) {
 
 // covers six numbers in two contiguous rows
 void BinBuilder::generateLineBets(Wheel& wheel) {
-
+	for (int r = 0; r < 11; ++r) {
+		int x = (r * 3) + 1;
+		Outcome outcome("Line " + std::to_string(x) +
+			"-" + std::to_string(x + 5), LINE_BET);
+		for (int i = 0; i < 6; ++i) {
+			wheel.addOutcome(x + i, outcome);
+		}
+	}
 }
 
 // covers 1-12, 13-24, or 25-36

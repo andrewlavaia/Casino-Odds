@@ -68,3 +68,44 @@ TEST(WheelTests, GenerateSplitBets) {
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome000), true);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome000), false);
 }
+
+TEST(WheelTests, GenerateStreetBets) {
+	Wheel wheel;
+	BinBuilder::generateStreetBets(wheel);
+
+	Outcome outcome123("Street 1-2-3", 11);
+	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome123), true);
+	EXPECT_EQ(wheel.getBin(2).outcomeInBin(outcome123), true);
+	EXPECT_EQ(wheel.getBin(3).outcomeInBin(outcome123), true);
+	EXPECT_EQ(wheel.getBin(4).outcomeInBin(outcome123), false);
+
+	Outcome outcome343536("Street 34-35-36", 11);
+	EXPECT_EQ(wheel.getBin(34).outcomeInBin(outcome343536), true);
+	EXPECT_EQ(wheel.getBin(35).outcomeInBin(outcome343536), true);
+	EXPECT_EQ(wheel.getBin(36).outcomeInBin(outcome343536), true);
+	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome343536), false);
+}
+
+TEST(WheelTests, GenerateLineBets) {
+	Wheel wheel;
+	BinBuilder::generateLineBets(wheel);
+
+	Outcome outcome16("Line 1-6", 5);
+	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome16), true);
+	EXPECT_EQ(wheel.getBin(2).outcomeInBin(outcome16), true);
+	EXPECT_EQ(wheel.getBin(3).outcomeInBin(outcome16), true);
+	EXPECT_EQ(wheel.getBin(4).outcomeInBin(outcome16), true);
+	EXPECT_EQ(wheel.getBin(5).outcomeInBin(outcome16), true);
+	EXPECT_EQ(wheel.getBin(6).outcomeInBin(outcome16), true);
+	EXPECT_EQ(wheel.getBin(0).outcomeInBin(outcome16), false);
+	EXPECT_EQ(wheel.getBin(7).outcomeInBin(outcome16), false);
+
+	Outcome outcome3136("Line 31-36", 5);
+	EXPECT_EQ(wheel.getBin(31).outcomeInBin(outcome3136), true);
+	EXPECT_EQ(wheel.getBin(32).outcomeInBin(outcome3136), true);
+	EXPECT_EQ(wheel.getBin(33).outcomeInBin(outcome3136), true);
+	EXPECT_EQ(wheel.getBin(34).outcomeInBin(outcome3136), true);
+	EXPECT_EQ(wheel.getBin(35).outcomeInBin(outcome3136), true);
+	EXPECT_EQ(wheel.getBin(36).outcomeInBin(outcome3136), true);
+	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome3136), false);
+}
