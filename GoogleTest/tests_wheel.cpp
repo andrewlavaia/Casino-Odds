@@ -43,3 +43,28 @@ TEST(WheelTests, GenerateStraightBets) {
 	Outcome a("Number 00", 35);
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(a), true);
 }
+
+TEST(WheelTests, GenerateSplitBets) {
+	Wheel wheel;
+	BinBuilder::generateSplitBets(wheel);
+	
+	Outcome outcome23("Split 2-3", 17);
+	EXPECT_EQ(wheel.getBin(2).outcomeInBin(outcome23), true);
+	EXPECT_EQ(wheel.getBin(3).outcomeInBin(outcome23), true);
+	EXPECT_EQ(wheel.getBin(4).outcomeInBin(outcome23), false);
+
+	Outcome outcome3435("Split 34-35", 17);
+	EXPECT_EQ(wheel.getBin(34).outcomeInBin(outcome3435), true);
+	EXPECT_EQ(wheel.getBin(35).outcomeInBin(outcome3435), true);
+	EXPECT_EQ(wheel.getBin(36).outcomeInBin(outcome3435), false);
+
+	Outcome outcome47("Split 4-7", 17);
+	EXPECT_EQ(wheel.getBin(4).outcomeInBin(outcome47), true);
+	EXPECT_EQ(wheel.getBin(7).outcomeInBin(outcome47), true);
+	EXPECT_EQ(wheel.getBin(5).outcomeInBin(outcome47), false);
+
+	Outcome outcome000("Split 0-00", 17);
+	EXPECT_EQ(wheel.getBin(0).outcomeInBin(outcome000), true);
+	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome000), true);
+	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome000), false);
+}
