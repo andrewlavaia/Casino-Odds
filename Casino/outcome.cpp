@@ -4,6 +4,9 @@ Outcome::Outcome(std::string name, double odds)
 	: name(name), odds(odds) {
 }
 
+// Only compare name so that there can only be one 
+// version of an Outcome with each name. This prevents
+// adding new Outcomes with same name but different odds
 bool Outcome::operator==(const Outcome &rhs) const {
 	return name == rhs.name;
 }

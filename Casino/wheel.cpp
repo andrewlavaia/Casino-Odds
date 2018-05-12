@@ -1,8 +1,8 @@
 #include "wheel.h"
+#include "binbuilder.h"
 
 Wheel::Wheel(unsigned seed)
 	: rng(seed), bins(std::array<Bin, 38>()) {
-
 }
 
 void Wheel::addOutcome(int i, Outcome outcome) {

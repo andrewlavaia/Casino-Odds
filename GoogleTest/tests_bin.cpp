@@ -18,7 +18,7 @@ TEST(BinTests, OutcomeInBin) {
 	Outcome a("a", 8);
 	Outcome b("b", 7);
 	Outcome c("c", 9);
-	Outcome d("a", 9);
+	Outcome d("a", 15);
 
 	Bin bin;
 	bin.addOutcome(a);
