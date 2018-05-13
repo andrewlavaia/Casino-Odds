@@ -11,6 +11,18 @@ const double COLUMN_BET = 2;
 const double DOZEN_BET = 2;
 const double EVEN_BET = 1;
 
+void BinBuilder::populateRouletteBins(Wheel& wheel) {
+	generateStraightBets(wheel);
+	generateSplitBets(wheel);
+	generateCornerBets(wheel);
+	generateStreetBets(wheel);
+	generateColumnBets(wheel);
+	generateLineBets(wheel);
+	generateDozenBets(wheel);
+	generateEvenMoneyBets(wheel);
+	generateBasketBet(wheel);
+}
+
 // Covers any single number
 // Outcome name = "Number 1", "Number 2", ...
 void BinBuilder::generateStraightBets(Wheel& wheel) {

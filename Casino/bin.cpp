@@ -25,3 +25,11 @@ void Bin::addOutcome(Outcome outcome) {
 unsigned Bin::getCount() const {
 	return outcomes.size();
 }
+
+void Bin::printOutcomes() const {
+	for (Outcome o : outcomes) {
+		std::string name = o.getName();
+		std::string odds = o.oddsToString();
+		std::cout << name << " - " << odds << std::endl;
+	}
+}

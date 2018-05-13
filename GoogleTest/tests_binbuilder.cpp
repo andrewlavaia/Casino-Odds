@@ -4,13 +4,11 @@
 #include "../casino/bin.h"
 #include "../casino/outcome.h"
 
-
-TEST(BinBuilderTests, GenerateStraightBets) {
+TEST(BinBuilderTests, CheckStraightBets) {
 	Wheel wheel;
-	BinBuilder::generateStraightBets(wheel);
+
 	for (int i = 0; i < 37; ++i) {
 		Outcome outcome("Number " + std::to_string(i), 35);
-		EXPECT_EQ(wheel.getBin(i).getCount(), 1);
 		EXPECT_EQ(wheel.getBin(i).outcomeInBin(outcome), true);
 	}
 
@@ -18,9 +16,8 @@ TEST(BinBuilderTests, GenerateStraightBets) {
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(a), true);
 }
 
-TEST(BinBuilderTests, GenerateSplitBets) {
+TEST(BinBuilderTests, CheckSplitBets) {
 	Wheel wheel;
-	BinBuilder::generateSplitBets(wheel);
 
 	Outcome outcome23("Split 2-3", 17);
 	EXPECT_EQ(wheel.getBin(2).outcomeInBin(outcome23), true);
@@ -43,9 +40,8 @@ TEST(BinBuilderTests, GenerateSplitBets) {
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome000), false);
 }
 
-TEST(BinBuilderTests, GenerateStreetBets) {
+TEST(BinBuilderTests, CheckStreetBets) {
 	Wheel wheel;
-	BinBuilder::generateStreetBets(wheel);
 
 	Outcome outcome123("Street 1-2-3", 11);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome123), true);
@@ -60,9 +56,8 @@ TEST(BinBuilderTests, GenerateStreetBets) {
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome343536), false);
 }
 
-TEST(BinBuilderTests, GenerateLineBets) {
+TEST(BinBuilderTests, CheckLineBets) {
 	Wheel wheel;
-	BinBuilder::generateLineBets(wheel);
 
 	Outcome outcome16("Line 1-6", 5);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome16), true);
@@ -84,9 +79,8 @@ TEST(BinBuilderTests, GenerateLineBets) {
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome3136), false);
 }
 
-TEST(BinBuilderTests, GenerateCornerBets) {
+TEST(BinBuilderTests, CheckCornerBets) {
 	Wheel wheel;
-	BinBuilder::generateCornerBets(wheel);
 
 	Outcome outcome15("Corner 1-5", 8);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome15), true);
@@ -104,9 +98,8 @@ TEST(BinBuilderTests, GenerateCornerBets) {
 	EXPECT_EQ(wheel.getBin(34).outcomeInBin(outcome3236), false);
 }
 
-TEST(BinBuilderTests, GenerateColumnBets) {
+TEST(BinBuilderTests, CheckColumnBets) {
 	Wheel wheel;
-	BinBuilder::generateColumnBets(wheel);
 
 	Outcome outcome1("Column 1-34", 2);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome1), true);
@@ -135,9 +128,8 @@ TEST(BinBuilderTests, GenerateColumnBets) {
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome3), false);
 }
 
-TEST(BinBuilderTests, GenerateDozenBets) {
+TEST(BinBuilderTests, CheckDozenBets) {
 	Wheel wheel;
-	BinBuilder::generateDozenBets(wheel);
 
 	Outcome outcome1("Dozen 1-12", 2);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(outcome1), true);
@@ -166,20 +158,18 @@ TEST(BinBuilderTests, GenerateDozenBets) {
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome3), false);
 }
 
-TEST(BinBuilderTests, GenerateBasketBet) {
+TEST(BinBuilderTests, CheckBasketBet) {
 	Wheel wheel;
-	BinBuilder::generateBasketBet(wheel);
 	Outcome outcome("Basket", 6);
-
 	EXPECT_EQ(wheel.getBin(0).outcomeInBin(outcome), true);
 	EXPECT_EQ(wheel.getBin(3).outcomeInBin(outcome), true);
 	EXPECT_EQ(wheel.getBin(37).outcomeInBin(outcome), true);
 	EXPECT_EQ(wheel.getBin(4).outcomeInBin(outcome), false);
 }
 
-TEST(BinBuilderTests, GenerateEvenMoneyBets) {
+TEST(BinBuilderTests, CheckEvenMoneyBets) {
 	Wheel wheel;
-	BinBuilder::generateEvenMoneyBets(wheel);
+
 	Outcome red("Red", 1);
 	Outcome black("Black", 1);
 	Outcome even("Even", 1);
@@ -204,20 +194,16 @@ TEST(BinBuilderTests, GenerateEvenMoneyBets) {
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(red), true);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(odd), true);
 	EXPECT_EQ(wheel.getBin(1).outcomeInBin(lo), true);
-	EXPECT_EQ(wheel.getBin(1).getCount(), 3);
 
 	EXPECT_EQ(wheel.getBin(18).outcomeInBin(red), true);
 	EXPECT_EQ(wheel.getBin(18).outcomeInBin(even), true);
 	EXPECT_EQ(wheel.getBin(18).outcomeInBin(lo), true);
-	EXPECT_EQ(wheel.getBin(18).getCount(), 3);
 
 	EXPECT_EQ(wheel.getBin(19).outcomeInBin(red), true);
 	EXPECT_EQ(wheel.getBin(19).outcomeInBin(odd), true);
 	EXPECT_EQ(wheel.getBin(19).outcomeInBin(hi), true);
-	EXPECT_EQ(wheel.getBin(19).getCount(), 3);
 
 	EXPECT_EQ(wheel.getBin(35).outcomeInBin(black), true);
 	EXPECT_EQ(wheel.getBin(35).outcomeInBin(odd), true);
 	EXPECT_EQ(wheel.getBin(35).outcomeInBin(hi), true);
-	EXPECT_EQ(wheel.getBin(35).getCount(), 3);
 }

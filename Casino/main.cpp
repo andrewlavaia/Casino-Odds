@@ -12,11 +12,9 @@ int main() {
 	int n = 1;
 
 	while (n != 0) {
-		
 
 		Wheel wheel;
-		BinBuilder::generateStraightBets(wheel);
-		
+		wheel.getBin(8).printOutcomes();
 		
 		std::cin >> n;
 	}

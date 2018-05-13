@@ -16,6 +16,7 @@ public:
 	bool outcomeInBin(Outcome outcome) const;
 	void addOutcome(Outcome outcome);
 	unsigned getCount() const;
+	void printOutcomes() const;
 
 private:
 	std::unordered_set<Outcome> outcomes;

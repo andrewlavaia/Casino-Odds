@@ -11,6 +11,9 @@
 
 class BinBuilder {
 public:
+	static void populateRouletteBins(Wheel& wheel);
+
+private: 
 	static void generateStraightBets(Wheel& wheel);
 	static void generateSplitBets(Wheel& wheel);
 	static void generateCornerBets(Wheel& wheel);
@@ -20,9 +23,6 @@ public:
 	static void generateDozenBets(Wheel& wheel);
 	static void generateEvenMoneyBets(Wheel& wheel);
 	static void generateBasketBet(Wheel& wheel);
-
-private: 
-
 };
 
 
