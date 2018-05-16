@@ -15,7 +15,15 @@ double Bet::loseAmount() const {
 
 std::string Bet::toString() const {
 	std::string str = "";
-	str = std::to_string(amount) + " on " 
+	
+	std::string amountStr = std::to_string(amount);
+	int offset = 1;
+	if (amountStr.find_last_not_of('0') == amountStr.find('.')) {
+		offset = 0;
+	}
+	amountStr.erase(amountStr.find_last_not_of('0') + offset, std::string::npos);
+	
+	str = amountStr + " on " 
 		+ outcome.getName() + " at " + outcome.oddsToString();
 	return str;
 }

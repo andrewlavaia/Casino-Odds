@@ -9,15 +9,10 @@
 
 int main() {
 
-	int n = 1;
 
-	while (n != 0) {
-
-		Wheel wheel;
-		wheel.getBin(8).printOutcomes();
+	Wheel wheel;
+	wheel.getBin(8).printOutcomes();
 		
-		std::cin >> n;
-	}
 
 	return 0;
 }

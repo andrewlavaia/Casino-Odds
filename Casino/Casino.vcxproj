@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bet.cpp" />
     <ClCompile Include="bin.cpp" />
     <ClCompile Include="binbuilder.cpp" />
     <ClCompile Include="main.cpp" />
@@ -26,6 +27,7 @@
     <ClCompile Include="wheel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bet.h" />
     <ClInclude Include="bin.h" />
     <ClInclude Include="binbuilder.h" />
     <ClInclude Include="outcome.h" />
@@ -90,6 +92,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
