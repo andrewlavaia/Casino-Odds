@@ -4,12 +4,16 @@
 #include "outcome.h"
 #include <string>
 
+
+// should tie these to individual players
+// player's wallets will be debited upon 
+// placing bets
+
 class Bet {
 public:
 	Bet(double amount, Outcome outcome);
 
 	double winAmount() const;
-	double loseAmount() const;
 	std::string toString() const;
 
 private:

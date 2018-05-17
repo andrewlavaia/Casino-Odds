@@ -2,7 +2,7 @@
 #include "../casino/bet.h"
 #include "../casino/outcome.h"
 
-TEST(BetTests, WinLoseAmount) {
+TEST(BetTests, WinAmount) {
 	Outcome a("a", 8);
 	Outcome b("b", 1);
 	Outcome c("c", .50);
@@ -14,10 +14,6 @@ TEST(BetTests, WinLoseAmount) {
 	EXPECT_EQ(bet1.winAmount(), 800);
 	EXPECT_EQ(bet2.winAmount(), 100);
 	EXPECT_EQ(bet3.winAmount(), 50);
-	EXPECT_EQ(bet1.loseAmount(), -100);
-	EXPECT_EQ(bet2.loseAmount(), -100);
-	EXPECT_EQ(bet3.loseAmount(), -100);
-	
 }
 
 TEST(BetTests, BetToString) {
