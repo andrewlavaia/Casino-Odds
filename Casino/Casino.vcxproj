@@ -22,15 +22,21 @@
     <ClCompile Include="bet.cpp" />
     <ClCompile Include="bin.cpp" />
     <ClCompile Include="binbuilder.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="outcome.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="table.cpp" />
     <ClCompile Include="wheel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bet.h" />
     <ClInclude Include="bin.h" />
     <ClInclude Include="binbuilder.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="outcome.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="table.h" />
     <ClInclude Include="wheel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
