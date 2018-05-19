@@ -1,10 +1,10 @@
 #include "player.h"
 
-Player::Player(Table table, Wheel wheel)
-	: table(table), wheel(wheel), cash(0) {
+Player::Player()
+	: cash(1000) {
 
 }
 
-void Player::placeBet() {
-
+void Player::adjustCash(double amount) {
+	cash += amount;
 }

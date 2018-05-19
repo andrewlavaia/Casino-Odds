@@ -4,15 +4,18 @@
 #include "bet.h"
 #include <unordered_set>
 
+// Each table holds the bets for a single player
 class Table {
 public:
+	Table(double limit = 10000, double minimum = 1);
 	void placeBet(Bet bet);
 	void removeBet(Bet bet);
+	std::vector<Bet> getAllBets();
 
 private: 
 	double limit;
 	double minimum;
-	std::unordered_set<Bet> bets;
+	std::vector<Bet> bets;
 	
 };
 

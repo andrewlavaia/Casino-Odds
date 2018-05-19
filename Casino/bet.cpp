@@ -23,3 +23,7 @@ std::string Bet::toString() const {
 		+ outcome.getName() + " at " + outcome.oddsToString();
 	return str;
 }
+
+Outcome Bet::getOutcome() const {
+	return outcome;
+}

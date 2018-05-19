@@ -4,23 +4,14 @@
 #include "table.h"
 #include "wheel.h"
 #include "player.h"
-#include <vector>
 
 class Game {
 	Game(Table table, Wheel wheel);
-
-	void addPlayer(Player player);
-	void removePlayer(Player player);
-
-	void gatherBets();
-	void spinWheel();
-	void resolveBets();
+	void play(Player player);
 
 private:
 	Table table;
 	Wheel wheel;
-	std::unordered_set<Player> players;
-
 };
 
 

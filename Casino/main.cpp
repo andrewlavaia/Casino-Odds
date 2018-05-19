@@ -9,7 +9,6 @@
 
 int main() {
 
-
 	Wheel wheel;
 	wheel.getBin(8).printOutcomes();
 		

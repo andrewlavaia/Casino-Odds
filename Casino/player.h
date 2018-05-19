@@ -6,17 +6,11 @@
 
 class Player {
 public:
-	Player(Table table, Wheel wheel);
-	void placeBet();
+	Player();
+	void adjustCash(double amount);
 
 private:
 	double cash;
-
-	// temporarily hold table and wheel in player 
-	// should probably switch these to pointers if 
-	// keeping this interface
-	Table table; 
-	Wheel wheel;
 
 };
 
