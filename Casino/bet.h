@@ -1,12 +1,15 @@
 #ifndef BET_H
 #define BET_H
 
-#include "outcome.h"
 #include <string>
+#include "outcome.h"
+
+class Player;
 
 class Bet {
 public:
-	Bet(double amount, Outcome outcome);
+	Bet(double amount, Outcome outcome, 
+		const Player& player);
 
 	double winAmount() const;
 	std::string toString() const;
@@ -16,6 +19,7 @@ public:
 private:
 	double amount;
 	Outcome outcome;
+	const Player& player;
 };
 
 #endif

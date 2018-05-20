@@ -1,7 +1,8 @@
 #include "bet.h"
 
-Bet::Bet(double amount, Outcome outcome)
-	: amount(amount), outcome(outcome) {
+Bet::Bet(double amount, Outcome outcome, 
+	const Player& player)
+	: amount(amount), outcome(outcome), player(player) {
 
 }
 

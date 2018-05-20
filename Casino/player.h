@@ -1,14 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "bet.h"
 #include "table.h"
-#include "wheel.h"
 
 class Player {
 public:
-	Player(Table table, double cash = 1000);
+	Player(double cash = 1000);
 	
-	void placeBet(Bet bet);
+	void placeBet(Bet bet, Table& table);
 	void win(Bet bet);
 	void lose(Bet bet);
 
@@ -16,7 +16,6 @@ public:
 	double getCash() const;
 
 private:
-	Table table;
 	double cash;
 	bool playing;
 	

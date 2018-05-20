@@ -9,18 +9,19 @@ Game::Game(Table table, Wheel wheel)
 void Game::play() {
 	
 	// gather bets
-	std::vector<PlayerBet> bets = table.getAllBets();
+	std::vector<Bet> bets = table.getAllBets();
 	
 	// spin wheel
 	Bin bin = wheel.spin();
 	
 	// resolve bets
-	for (auto pb : bets) {
-		if (bin.outcomeInBin(pb.bet.getOutcome())) {
-			pb.player.win(pb.bet);
+	for (auto bet : bets) {
+		if (bin.outcomeInBin(bet.getOutcome())) {
+			//pb.first.win(pb.second);
+			//std::cout << pb.second.toString();
 		}
 		else {
-			pb.player.lose(pb.bet);
+			//pb.first.lose(pb.second);
 		}
 	}
 	

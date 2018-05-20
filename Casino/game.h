@@ -3,7 +3,9 @@
 
 #include "table.h"
 #include "wheel.h"
-#include "playerbet.h"
+
+class Player;
+class Bet;
 
 class Game {
 	Game(Table table, Wheel wheel);

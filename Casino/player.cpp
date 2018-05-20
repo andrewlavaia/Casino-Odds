@@ -1,11 +1,10 @@
 #include "player.h"
 
-Player::Player(Table table, double cash)
-	: table(table), cash(cash), playing(true) {
-
+Player::Player(double cash)
+	: cash(cash), playing(true) {
 }
 
-void Player::placeBet(Bet bet) {
+void Player::placeBet(Bet bet, Table& table) {
 	table.placeBet(bet);
 }
 

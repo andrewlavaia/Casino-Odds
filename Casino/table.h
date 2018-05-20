@@ -1,20 +1,20 @@
 #ifndef TABLE_H
 #define TABLE_H
 
-#include "playerbet.h"
 #include <vector>
+#include "bet.h"
 
 // The table manages the bets for each player
 class Table {
 public:
 	Table(double limit = 1000, double minimum = 1);
-	void placeBet(PlayerBet pb);
-	std::vector<PlayerBet> getAllBets() const;
+	void placeBet(Bet bet);
+	std::vector<Bet> getAllBets() const;
 	
 private: 
 	double limit;
 	double minimum;
-	std::vector<PlayerBet> bets;
+	std::vector<Bet> bets;
 	
 };
 
