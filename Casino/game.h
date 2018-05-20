@@ -3,11 +3,11 @@
 
 #include "table.h"
 #include "wheel.h"
-#include "player.h"
+#include "playerbet.h"
 
 class Game {
 	Game(Table table, Wheel wheel);
-	void play(Player player);
+	void play();
 
 private:
 	Table table;

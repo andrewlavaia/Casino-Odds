@@ -24,6 +24,10 @@ std::string Bet::toString() const {
 	return str;
 }
 
+double Bet::getAmount() const {
+	return amount;
+}
+
 Outcome Bet::getOutcome() const {
 	return outcome;
 }

@@ -10,6 +10,7 @@ public:
 
 	double winAmount() const;
 	std::string toString() const;
+	double getAmount() const;
 	Outcome getOutcome() const;
 
 private:

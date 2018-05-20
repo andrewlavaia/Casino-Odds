@@ -2,18 +2,13 @@
 
 Table::Table(double limit, double minimum) :
 	limit(limit), minimum(minimum) {
-
 }
 
-void Table::placeBet(Bet bet) {
-	bets.push_back(bet);
+void Table::placeBet(PlayerBet pb) {
+	bets.push_back(pb);
 }
 
-void Table::removeBet(Bet bet) {
-	//bets.erase(bet);
-}
-
-std::vector<Bet> Table::getAllBets() {
+std::vector<PlayerBet> Table::getAllBets() const {
 	return bets;
 }
 

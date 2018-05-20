@@ -1,21 +1,20 @@
 #ifndef TABLE_H
 #define TABLE_H
 
-#include "bet.h"
-#include <unordered_set>
+#include "playerbet.h"
+#include <vector>
 
-// Each table holds the bets for a single player
+// The table manages the bets for each player
 class Table {
 public:
-	Table(double limit = 10000, double minimum = 1);
-	void placeBet(Bet bet);
-	void removeBet(Bet bet);
-	std::vector<Bet> getAllBets();
-
+	Table(double limit = 1000, double minimum = 1);
+	void placeBet(PlayerBet pb);
+	std::vector<PlayerBet> getAllBets() const;
+	
 private: 
 	double limit;
 	double minimum;
-	std::vector<Bet> bets;
+	std::vector<PlayerBet> bets;
 	
 };
 
