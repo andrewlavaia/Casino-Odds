@@ -24,9 +24,9 @@ TEST(BinTests, OutcomeInBin) {
 	bin.addOutcome(a);
 	bin.addOutcome(b);
 
-	EXPECT_EQ(bin.outcomeInBin(a), true);
-	EXPECT_EQ(bin.outcomeInBin(b), true);
-	EXPECT_EQ(bin.outcomeInBin(c), false);
+	EXPECT_EQ(bin.containsOutcome(a), true);
+	EXPECT_EQ(bin.containsOutcome(b), true);
+	EXPECT_EQ(bin.containsOutcome(c), false);
 	EXPECT_EXIT(bin.addOutcome(d), ::testing::ExitedWithCode(-1), 
 		"Error: outcome with name=a already exists in Bin");
 	EXPECT_EQ(bin.getCount(), 2);

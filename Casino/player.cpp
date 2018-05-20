@@ -4,7 +4,7 @@ Player::Player(double cash)
 	: cash(cash), playing(true) {
 }
 
-void Player::placeBet(Bet bet, Table& table) {
+void Player::placeBet(Bet bet, Table& table) const {
 	table.placeBet(bet);
 }
 

@@ -4,7 +4,7 @@ Bin::Bin(std::unordered_set<Outcome> outcomes)
 	: outcomes(outcomes) {
 }
 
-bool Bin::outcomeInBin(Outcome outcome) const {
+bool Bin::containsOutcome(Outcome outcome) const {
 	if (outcomes.find(outcome) != outcomes.end())
 		return true;
 	else
@@ -12,7 +12,7 @@ bool Bin::outcomeInBin(Outcome outcome) const {
 }
 
 void Bin::addOutcome(Outcome outcome) {
-	if (outcomeInBin(outcome)) {
+	if (containsOutcome(outcome)) {
 		std::cerr << "Error: outcome with name=" << outcome.getName() 
 			<< " already exists in Bin";
 		exit(-1);

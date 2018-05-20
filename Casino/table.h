@@ -4,6 +4,8 @@
 #include <vector>
 #include "bet.h"
 
+class Bet;
+
 // The table manages the bets for each player
 class Table {
 public:

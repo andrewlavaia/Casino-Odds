@@ -16,12 +16,11 @@ void Game::play() {
 	
 	// resolve bets
 	for (auto bet : bets) {
-		if (bin.outcomeInBin(bet.getOutcome())) {
-			//pb.first.win(pb.second);
-			//std::cout << pb.second.toString();
+		if (bin.containsOutcome(bet.getOutcome())) {
+			bet.win();
 		}
 		else {
-			//pb.first.lose(pb.second);
+			bet.lose();
 		}
 	}
 	

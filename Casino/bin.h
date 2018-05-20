@@ -13,7 +13,7 @@
 class Bin {
 public:
 	Bin(std::unordered_set<Outcome> outcomes = {});
-	bool outcomeInBin(Outcome outcome) const;
+	bool containsOutcome(Outcome outcome) const;
 	void addOutcome(Outcome outcome);
 	unsigned getCount() const;
 	void printOutcomes() const;

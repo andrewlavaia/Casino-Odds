@@ -22,9 +22,9 @@ TEST(WheelTests, AddOutcomeToBin) {
 	wheel.addOutcome(0, a);
 	wheel.addOutcome(37, a);
 
-	EXPECT_EQ(wheel.getBin(0).outcomeInBin(a), true);
-	EXPECT_EQ(wheel.getBin(1).outcomeInBin(a), false);
-	EXPECT_EQ(wheel.getBin(37).outcomeInBin(a), true);
+	EXPECT_EQ(wheel.getBin(0).containsOutcome(a), true);
+	EXPECT_EQ(wheel.getBin(1).containsOutcome(a), false);
+	EXPECT_EQ(wheel.getBin(37).containsOutcome(a), true);
 }
 
 TEST(WheelTests, OutcomeCount) {
