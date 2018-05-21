@@ -11,7 +11,7 @@ class Player {
 public:
 	Player(double cash = 1000);
 	
-	void placeBet(Bet bet, Table& table) const;
+	void placeBet(Bet bet, Table& table);
 	void win(Bet bet);
 	void lose(Bet bet);
 
@@ -21,8 +21,6 @@ public:
 private:
 	double cash;
 	bool playing;
-	
-
 };
 
 

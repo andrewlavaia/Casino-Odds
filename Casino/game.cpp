@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(Table table, Wheel wheel)
+Game::Game(Table& table, const Wheel& wheel)
 	: table(table), wheel(wheel) {
 }
 
@@ -23,5 +23,7 @@ void Game::play() {
 			bet.lose();
 		}
 	}
-	
+
+	// clear bets from table
+	table.clearAllBets();
 }

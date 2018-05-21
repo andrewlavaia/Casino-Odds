@@ -4,12 +4,15 @@ Player::Player(double cash)
 	: cash(cash), playing(true) {
 }
 
-void Player::placeBet(Bet bet, Table& table) const {
+void Player::placeBet(Bet bet, Table& table) {
 	table.placeBet(bet);
+	double val = bet.getAmount();
+	cash -= val;
 }
 
 void Player::win(Bet bet) {
-	cash += bet.winAmount();
+	cash += bet.getAmount(); // original stake 
+	cash += bet.winAmount(); 
 }
 
 void Player::lose(Bet bet) {

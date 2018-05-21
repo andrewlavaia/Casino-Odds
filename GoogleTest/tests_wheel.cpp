@@ -45,3 +45,20 @@ TEST(WheelTests, OutcomeCount) {
 	EXPECT_EQ(wheel.getBin(0).getCount(), 3);
 	EXPECT_EQ(wheel.getBin(37).getCount(), 3);
 }
+
+TEST(WheelTests, RNG) {
+	Wheel wheel(0); // custom seed
+	
+	Bin bin = wheel.spin();
+	Outcome outcome1("Number 34", 35);
+	EXPECT_EQ(bin.containsOutcome(outcome1), true);
+	
+	bin = wheel.spin();
+	Outcome outcome2("Number 23", 35);
+	EXPECT_EQ(bin.containsOutcome(outcome2), true);
+
+	bin = wheel.spin();
+	Outcome outcome3("Number 19", 35);
+	EXPECT_EQ(bin.containsOutcome(outcome3), true);
+
+}

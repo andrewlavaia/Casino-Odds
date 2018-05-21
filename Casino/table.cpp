@@ -5,7 +5,15 @@ Table::Table(double limit, double minimum) :
 }
 
 void Table::placeBet(Bet bet) {
-	//bets.push_back();
+	bets.push_back(bet);
+}
+
+void Table::placeAllBets(std::vector<Bet> newBets) {
+	std::swap(bets, newBets);
+}
+
+void Table::clearAllBets() {
+	bets.clear();
 }
 
 std::vector<Bet> Table::getAllBets() const {

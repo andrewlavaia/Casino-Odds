@@ -3,17 +3,16 @@
 
 #include "table.h"
 #include "wheel.h"
-
-class Player;
-class Bet;
+#include "bet.h"
 
 class Game {
-	Game(Table table, Wheel wheel);
+public:
+	Game(Table& table, const Wheel& wheel);
 	void play();
 
 private:
-	Table table;
-	Wheel wheel;
+	Table& table;
+	const Wheel& wheel;
 };
 
 

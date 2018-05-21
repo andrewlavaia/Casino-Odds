@@ -11,6 +11,8 @@ class Table {
 public:
 	Table(double limit = 1000, double minimum = 1);
 	void placeBet(Bet bet);
+	void placeAllBets(std::vector<Bet> newBets);
+	void clearAllBets();
 	std::vector<Bet> getAllBets() const;
 	
 private: 

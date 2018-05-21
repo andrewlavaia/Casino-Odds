@@ -39,6 +39,7 @@
     <ClInclude Include="..\Casino\bet.h" />
     <ClInclude Include="..\Casino\bin.h" />
     <ClInclude Include="..\Casino\binbuilder.h" />
+    <ClInclude Include="..\Casino\game.h" />
     <ClInclude Include="..\Casino\outcome.h" />
     <ClInclude Include="..\Casino\player.h" />
     <ClInclude Include="..\Casino\table.h" />
@@ -53,6 +54,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\Casino\binbuilder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Casino\game.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\Casino\outcome.cpp">
@@ -70,6 +74,7 @@
     </ClCompile>
     <ClCompile Include="tests_bet.cpp" />
     <ClCompile Include="tests_binbuilder.cpp" />
+    <ClCompile Include="tests_game.cpp" />
     <ClCompile Include="tests_outcome.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -78,6 +83,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="tests_bin.cpp" />
+    <ClCompile Include="tests_player.cpp" />
     <ClCompile Include="tests_wheel.cpp" />
   </ItemGroup>
   <ItemGroup>

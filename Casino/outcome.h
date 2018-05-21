@@ -7,6 +7,7 @@
 class Outcome {
 public:
 	Outcome(std::string name, double odds);
+
 	bool operator==(const Outcome &rhs) const;
 	bool operator!=(const Outcome &rhs) const;
 
