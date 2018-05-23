@@ -6,21 +6,20 @@
 #include "bin.h"
 #include "wheel.h"
 #include "binbuilder.h"
+#include "table.h"
+#include "game.h"
+#include "simulator.h"
 
 int main() {
 
-	//Wheel wheel;
-	//wheel.getBin(8).printOutcomes();
+	Wheel wheel;
+	Table table;
+	Game game(table, wheel);
 	
-	Wheel wheel2(0);
-	Bin bin = wheel2.spin();
-	bin.printOutcomes();
-
-	bin = wheel2.spin();
-	bin.printOutcomes();
-
-	bin = wheel2.spin();
-	bin.printOutcomes();
+	Player playerA(1000);
+	Player playerB(5000);
+	
+	Simulator sim(game, { playerA, playerB });
 
 	return 0;
 }

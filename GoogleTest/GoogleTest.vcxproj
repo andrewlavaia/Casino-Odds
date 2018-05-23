@@ -84,6 +84,7 @@
     </ClCompile>
     <ClCompile Include="tests_bin.cpp" />
     <ClCompile Include="tests_player.cpp" />
+    <ClCompile Include="tests_table.cpp" />
     <ClCompile Include="tests_wheel.cpp" />
   </ItemGroup>
   <ItemGroup>
