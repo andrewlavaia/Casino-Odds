@@ -27,3 +27,7 @@ void Game::play() {
 	// clear bets from table
 	table.clearAllBets();
 }
+
+Table& Game::getTable() {
+	return table;
+}

@@ -9,6 +9,7 @@ class Game {
 public:
 	Game(Table& table, const Wheel& wheel);
 	void play();
+	Table& getTable();
 
 private:
 	Table& table;

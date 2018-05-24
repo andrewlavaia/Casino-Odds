@@ -20,6 +20,8 @@ int main() {
 	Player playerB(5000);
 	
 	Simulator sim(game, { playerA, playerB });
+	sim.run();
+	sim.printResults();
 
 	return 0;
 }
