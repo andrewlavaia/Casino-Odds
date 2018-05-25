@@ -11,8 +11,8 @@ class Player {
 public:
 	Player(double cash = 1000);
 	
+	virtual void placeBets(Table& table);
 	void placeBet(Bet bet, Table& table);
-	void placeBets(Table& table);
 	void win(Bet bet);
 	void lose(Bet bet);
 
@@ -21,11 +21,21 @@ public:
 	double getHighestCash() const;
 	int getRoundsPlayed() const;
 
-private:
+protected:
 	double cash;
 	double highestCash;
 	bool playing;
 	int roundsPlayed;
+};
+
+class AlwaysBetOnBlack : public Player {
+public:
+	void placeBets(Table& table);
+};
+
+class AlwaysBetOnRed : public Player {
+public:
+	void placeBets(Table& table);
 };
 
 

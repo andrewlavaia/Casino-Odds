@@ -16,8 +16,8 @@ int main() {
 	Table table;
 	Game game(table, wheel);
 	
-	Player playerA(1000);
-	Player playerB(5000);
+	Player* playerA = new AlwaysBetOnRed();
+	Player* playerB = new AlwaysBetOnBlack();
 	
 	Simulator sim(game, { playerA, playerB });
 	sim.run();

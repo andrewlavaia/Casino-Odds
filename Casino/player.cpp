@@ -44,3 +44,22 @@ double Player::getHighestCash() const {
 int Player::getRoundsPlayed() const {
 	return roundsPlayed;
 }
+
+
+
+// -------------------------
+void AlwaysBetOnBlack::placeBets(Table& table) {
+	Outcome o1("Black", 1);
+	Bet bet(10, o1, *this);
+	placeBet(bet, table);
+
+	++roundsPlayed;
+}
+
+void AlwaysBetOnRed::placeBets(Table& table) {
+	Outcome o1("Red", 1);
+	Bet bet(10, o1, *this);
+	placeBet(bet, table);
+
+	++roundsPlayed;
+}

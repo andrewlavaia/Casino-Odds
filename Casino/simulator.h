@@ -6,7 +6,7 @@
 
 class Simulator {
 public:
-	Simulator(Game game, std::vector<Player> players,
+	Simulator(Game game, std::vector<Player*> players,
 			int rounds = 250);
 
 	void run();
@@ -14,7 +14,7 @@ public:
 
 private:
 	Game game;
-	std::vector<Player> players;
+	std::vector<Player*> players;
 	int rounds;	
 };
 
