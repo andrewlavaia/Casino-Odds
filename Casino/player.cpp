@@ -1,8 +1,8 @@
 #include "player.h"
 
-Player::Player(double cash)
-	: cash(cash), highestCash(cash), 
-	playing(true), roundsPlayed(0) {
+Player::Player(double cash, double betPercent)
+	: cash(cash), originalCash(cash), highestCash(cash), 
+	betPercent(betPercent), playing(true), roundsPlayed(0) {
 }
 
 void Player::placeBet(Bet bet, Table& table) {
@@ -10,18 +10,8 @@ void Player::placeBet(Bet bet, Table& table) {
 	cash -= bet.getAmount(); 
 }
 
-void Player::placeBets(Table& table) {
-	if (isPlaying()) {
-		Outcome o1("Red", 1);
-		Bet bet(10, o1, *this);
-		placeBet(bet, table);
-
-		++roundsPlayed;
-	}
-}
-
 void Player::checkWinningBin(Bin& bin) {
-
+	// do nothing by default
 }
 
 void Player::win(Bet bet) {
@@ -54,10 +44,11 @@ int Player::getRoundsPlayed() const {
 
 
 // -------------------------
+
 void AlwaysBetOnBlack::placeBets(Table& table) {
 	if (isPlaying()) {
 		Outcome o1("Black", 1);
-		Bet bet(10, o1, *this);
+		Bet bet(betPercent * originalCash, o1, *this);
 		placeBet(bet, table);
 
 		++roundsPlayed;
@@ -67,7 +58,7 @@ void AlwaysBetOnBlack::placeBets(Table& table) {
 void AlwaysBetOnRed::placeBets(Table& table) {
 	if (isPlaying()) {
 		Outcome o1("Red", 1);
-		Bet bet(10, o1, *this);
+		Bet bet(betPercent * originalCash, o1, *this);
 		placeBet(bet, table);
 
 		++roundsPlayed;
@@ -94,7 +85,7 @@ void SevenReds::checkWinningBin(Bin& bin) {
 void SevenReds::placeBets(Table& table) {
 	if (isPlaying()) {
 		Outcome o1("Red", 1);
-		Bet bet(10, o1, *this);
+		Bet bet(betPercent * originalCash, o1, *this);
 		placeBet(bet, table);
 
 		++roundsPlayed;

@@ -11,7 +11,7 @@ TEST(GameTests, IntegrationTest) {
 	Table table;
 	Game game(table, wheel);
 
-	Player p(1000);
+	AlwaysBetOnRed p;
 	Outcome outcome1("Number 34", 35);
 	Outcome outcome2("Red", 1); // expecting 23
 	Outcome outcome3("Street 19-20-21", 11); // expecting 19

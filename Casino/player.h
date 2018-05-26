@@ -11,9 +11,8 @@ class Table;
 
 class Player {
 public:
-	Player(double cash = 1000);
-	
-	virtual void placeBets(Table& table);
+	Player(double cash = 1000, double betPercent = .01);
+	virtual void placeBets(Table& table) = 0;
 	virtual void checkWinningBin(Bin& bin);
 	void placeBet(Bet bet, Table& table);
 	void win(Bet bet);
@@ -26,7 +25,9 @@ public:
 
 protected:
 	double cash;
+	const double originalCash;
 	double highestCash;
+	double betPercent;
 	bool playing;
 	int roundsPlayed;
 };

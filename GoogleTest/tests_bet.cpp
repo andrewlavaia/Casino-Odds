@@ -6,7 +6,7 @@
 class Player;
 
 TEST(BetTests, WinAmount) {
-	Player p;
+	AlwaysBetOnRed p;
 	Outcome a("a", 8);
 	Outcome b("b", 1);
 	Outcome c("c", .50);
@@ -21,7 +21,7 @@ TEST(BetTests, WinAmount) {
 }
 
 TEST(BetTests, BetToString) {
-	Player p;
+	AlwaysBetOnRed p;
 	Outcome a("a", 8);
 	Outcome b("b", 1);
 	Outcome c("c", .50);

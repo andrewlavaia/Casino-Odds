@@ -8,7 +8,7 @@
 TEST(PlayerTests, PlaceBet) {
 	Table table;
 
-	Player p(1000);
+	AlwaysBetOnRed p;
 	Outcome a("a", 8);
 	Bet bet(100, a, p);
 
@@ -19,7 +19,9 @@ TEST(PlayerTests, PlaceBet) {
 }
 
 TEST(PlayerTests, WinBet) {
-	Player p(1000);
+	AlwaysBetOnRed p;
+	EXPECT_EQ(p.getCash(), 1000);
+
 	Outcome a("a", 8);
 	Bet bet(100, a, p);
 	bet.win();
