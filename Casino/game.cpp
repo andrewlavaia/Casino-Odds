@@ -6,7 +6,7 @@ Game::Game(Table& table, const Wheel& wheel)
 
 // simulates a single round of betting,
 // spinning the wheel, and resolving outcomes
-void Game::play() {
+Bin Game::play() {
 	
 	// gather bets
 	std::vector<Bet> bets = table.getAllBets();
@@ -26,6 +26,8 @@ void Game::play() {
 
 	// clear bets from table
 	table.clearAllBets();
+
+	return bin;
 }
 
 Table& Game::getTable() {

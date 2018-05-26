@@ -9,12 +9,14 @@ void Simulator::run() {
 	for (int i = 0; i < rounds; ++i) {
 
 		for (auto player : players) {
-			if (player->isPlaying()) {
-				player->placeBets(game.getTable());
-			}
+			player->placeBets(game.getTable());
 		}
 
-		game.play();
+		Bin bin = game.play();
+		
+		for (auto player : players) {
+			player->checkWinningBin(bin);
+		}
 	}
 }
 

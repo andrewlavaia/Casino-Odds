@@ -18,8 +18,9 @@ int main() {
 	
 	Player* playerA = new AlwaysBetOnRed();
 	Player* playerB = new AlwaysBetOnBlack();
+	Player* playerC = new SevenReds();
 	
-	Simulator sim(game, { playerA, playerB });
+	Simulator sim(game, { playerA, playerB, playerC });
 	sim.run();
 	sim.printResults();
 

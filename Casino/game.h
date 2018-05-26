@@ -8,7 +8,7 @@
 class Game {
 public:
 	Game(Table& table, const Wheel& wheel);
-	void play();
+	Bin play();
 	Table& getTable();
 
 private:

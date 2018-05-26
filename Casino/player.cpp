@@ -11,11 +11,17 @@ void Player::placeBet(Bet bet, Table& table) {
 }
 
 void Player::placeBets(Table& table) {
-	Outcome o1("Red", 1);
-	Bet bet(10, o1, *this);
-	placeBet(bet, table);
+	if (isPlaying()) {
+		Outcome o1("Red", 1);
+		Bet bet(10, o1, *this);
+		placeBet(bet, table);
 
-	++roundsPlayed;
+		++roundsPlayed;
+	}
+}
+
+void Player::checkWinningBin(Bin& bin) {
+
 }
 
 void Player::win(Bet bet) {
@@ -49,17 +55,48 @@ int Player::getRoundsPlayed() const {
 
 // -------------------------
 void AlwaysBetOnBlack::placeBets(Table& table) {
-	Outcome o1("Black", 1);
-	Bet bet(10, o1, *this);
-	placeBet(bet, table);
+	if (isPlaying()) {
+		Outcome o1("Black", 1);
+		Bet bet(10, o1, *this);
+		placeBet(bet, table);
 
-	++roundsPlayed;
+		++roundsPlayed;
+	}
 }
 
 void AlwaysBetOnRed::placeBets(Table& table) {
-	Outcome o1("Red", 1);
-	Bet bet(10, o1, *this);
-	placeBet(bet, table);
+	if (isPlaying()) {
+		Outcome o1("Red", 1);
+		Bet bet(10, o1, *this);
+		placeBet(bet, table);
 
-	++roundsPlayed;
+		++roundsPlayed;
+	}
+}
+
+SevenReds::SevenReds() : redCnt(0) {
+	playing = false;
+}
+
+void SevenReds::checkWinningBin(Bin& bin) {
+	if (bin.containsOutcome({ "Red", 1 })) 
+		++redCnt;
+	else 
+		redCnt = 0;	
+
+	if (redCnt >= 7)
+		playing = true;
+	else
+		playing = false;
+
+}
+
+void SevenReds::placeBets(Table& table) {
+	if (isPlaying()) {
+		Outcome o1("Red", 1);
+		Bet bet(10, o1, *this);
+		placeBet(bet, table);
+
+		++roundsPlayed;
+	}
 }

@@ -9,7 +9,7 @@ class Bet;
 // The table manages the bets for each player
 class Table {
 public:
-	Table(double limit = 1000, double minimum = 1);
+	Table(double limit = 1000);
 	void placeBet(Bet bet);
 	void placeAllBets(std::vector<Bet> newBets);
 	void clearAllBets();
@@ -17,7 +17,6 @@ public:
 	
 private: 
 	double limit;
-	double minimum;
 	std::vector<Bet> bets;
 	
 };

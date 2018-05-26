@@ -1,7 +1,7 @@
 #include "table.h"
 
-Table::Table(double limit, double minimum) :
-	limit(limit), minimum(minimum) {
+Table::Table(double limit) :
+	limit(limit) {
 }
 
 void Table::placeBet(Bet bet) {

@@ -3,7 +3,9 @@
 
 #include "bet.h"
 #include "table.h"
+#include "bin.h"
 
+class Bin;
 class Bet;
 class Table;
 
@@ -12,6 +14,7 @@ public:
 	Player(double cash = 1000);
 	
 	virtual void placeBets(Table& table);
+	virtual void checkWinningBin(Bin& bin);
 	void placeBet(Bet bet, Table& table);
 	void win(Bet bet);
 	void lose(Bet bet);
@@ -38,6 +41,15 @@ public:
 	void placeBets(Table& table);
 };
 
+class SevenReds : public Player {
+public:
+	SevenReds();
+	void checkWinningBin(Bin& bin);
+	void placeBets(Table& table);
+
+private:
+	int redCnt;
+};
 
 
 
